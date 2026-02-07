@@ -1,34 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <meta charset="UTF-8">
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+    crossorigin="anonymous"
+  >
+
+  <!-- Fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'movie/styles.css' %}">
 </head>
 
-<div class="container">
+<body>
 
-  <form method="GET">
-    <div class="mb-3">
-      <label for="searchMovie" class="form-label">
-        Search for Movie:
-      </label>
-      <input type="text" class="form-control" name="searchMovie"/>
+  <div class="container">
+
+    <form method="GET" class="search-form">
+      <input
+        type="text"
+        name="searchMovie"
+        placeholder="Search a movie..."
+        value="{{ searchTerm|default_if_none:'' }}"
+      >
+
+      <button type="submit">🔍</button>
+    </form>
+
+    {% if searchTerm %}
+     <p class="search-text">Searching for “{{ searchTerm }}”</p>
+    {% endif %}
+
+
+    <div class="movies-row">
+
+        {% for movie in movies %}
+            <div class="movie-card">
+
+            {% if movie.image %}
+                <img src="{{ movie.image.url }}" alt="{{ movie.title }}">
+            {% endif %}
+
+            <h2>{{ movie.title }}</h2>
+            <p class="description">
+              {{ movie.description }}
+            </p>
+            <span class="toggle-text">See more</span>
+
+
+            {% if movie.url %}
+                <a href="{{ movie.url }}" target="_blank">Ver más</a>
+            {% endif %}
+
+            </div>
+        {% endfor %}
+
     </div>
-    <button type="submit" class="btn btn-primary">Search</button>
-  </form>
 
-  <p>Searching for {{ searchTerm }}</p>
+  </div>
 
-  {% for movie in movies %}
+<script>
+  document.querySelectorAll('.toggle-text').forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.movie-card');
+      card.classList.toggle('open');
+      button.textContent = card.classList.contains('open') ? 'See less' : 'See more';
+    });
+  });
+</script>
 
-    <h2>{{ movie.title }}</h2>
-    <h3>{{ movie.description }}</h3>
-
-    {% if movie.image %}
-      <img src="{{ movie.image.url }}" width="200">
-    {% endif %}
-
-    {% if movie.url %}
-      <a href="{{ movie.url }}">Movie Link</a>
-    {% endif %}
-
-  {% endfor %}
-
-</div>
+</body>
+</html>
