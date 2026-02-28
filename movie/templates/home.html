@@ -52,14 +52,21 @@
             {% endif %}
 
             <h2>{{ movie.title }}</h2>
+
+            <!-- NEW -->
+            <p class="movie-meta">
+              <strong>Genre:</strong> {{ movie.genre }} |
+              <strong>Year:</strong> {{ movie.year }}
+            </p>
+
             <p class="description">
               {{ movie.description }}
             </p>
+
             <span class="toggle-text">See more</span>
 
-
             {% if movie.url %}
-                <a href="{{ movie.url }}" target="_blank">Ver más</a>
+                <a href="{{ movie.url }}" target="_blank">See more</a>
             {% endif %}
 
             </div>

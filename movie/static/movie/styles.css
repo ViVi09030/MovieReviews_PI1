@@ -45,6 +45,12 @@ body {
   transition: max-height 0.3s ease;
 }
 
+.movie-meta {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 8px;
+}
+
 .movie-card.open .description {
   max-height: 300px;
 }
