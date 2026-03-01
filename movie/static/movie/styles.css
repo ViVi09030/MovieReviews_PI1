@@ -185,3 +185,126 @@ body {
   font-weight: 500;
   opacity: 0.9;
 }
+
+/* ===== Mailing list card ===== */
+.mailing-card{
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  padding: 25px;
+  max-width: 600px;
+  margin: 40px auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Input cute */
+.cute-input{
+  border-radius: 14px;
+  padding: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.cute-input:focus{
+  box-shadow: 0 0 0 3px rgba(255,105,180,0.15);
+  border-color: rgba(255,105,180,0.4);
+}
+
+/* Botón principal */
+.cute-btn{
+  background: rgba(255,105,180,0.18);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.cute-btn:hover{
+  background: rgba(255,105,180,0.25);
+  transform: translateY(-2px);
+}
+
+/* Página signup */
+.signup-card{
+  background: rgba(255,255,255,0.9);
+  border-radius: 22px;
+  padding: 40px;
+  max-width: 600px;
+  margin: 60px auto;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+  font-family: 'Poppins', sans-serif;
+}
+
+.cute-btn-outline{
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,105,180,0.4);
+  text-decoration: none;
+  color: #444;
+  transition: all 0.2s ease;
+}
+
+.cute-btn-outline:hover{
+  background: rgba(255,105,180,0.12);
+}
+
+/* ===== News Container ===== */
+
+.news-container{
+  max-width: 900px;
+  margin: 50px auto;
+}
+
+/* ===== News Card ===== */
+
+.news-card{
+  background: rgba(255,255,255,0.95);
+  border-radius: 26px;
+  padding: 35px 40px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.2s ease;
+}
+
+.news-card:hover{
+  transform: translateY(-4px);
+}
+
+/* ===== Headline ===== */
+
+.news-card h4{
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+/* ===== Body Text ===== */
+
+.news-body{
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #555;
+}
+
+/* Espacio entre párrafos generados por |linebreaks */
+.news-body p{
+  margin-bottom: 18px;
+}
+
+/* ===== Date ===== */
+
+.news-card small{
+  display: block;
+  margin-top: 15px;
+  opacity: 0.6;
+}
+
+.news-tag{
+  font-size: 0.85rem;
+  opacity: 0.6;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}

@@ -40,6 +40,26 @@
   {% endfor %}
 </div>
 
+<!-- Suscription -->
+
+<div class="mailing-card mt-5">
+  <h3 class="mb-3">💌 Join our mailing list</h3>
+
+  <form action="{% url 'signup' %}" method="GET">
+    <div class="mb-3">
+      <input type="email"
+             class="form-control cute-input"
+             name="email"
+             placeholder="Enter your email..."
+             required>
+    </div>
+
+    <button type="submit" class="cute-btn">
+      Sign Up ✨
+    </button>
+  </form>
+</div>
+
 <script>
   document.querySelectorAll('.toggle-text').forEach(button => {
     button.addEventListener('click', () => {

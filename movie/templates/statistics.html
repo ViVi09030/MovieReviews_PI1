@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h2 class="mb-3">Movies per year</h2>
-<img class="img-fluid mb-4" src="data:image/png;base64,{{ graphic_year }}" alt="Movies per year">
+<h2 class="mb-4 fw-bold">☆ Statistics Overview ☆</h2>
 
-<h2 class="mb-3">Movies per genre</h2>
-<img class="img-fluid" src="data:image/png;base64,{{ graphic_genre }}" alt="Movies per genre">
+<div class="mb-5">
+  <h4 class="fw-semibold mb-3">📅 Movies Released by Year</h4>
+  <img class="img-fluid rounded-4 shadow-sm" src="data:image/png;base64,{{ graphic_year }}">
+</div>
+
+<div>
+  <h4 class="fw-semibold mb-3">🎬 Movies by Genre</h4>
+  <img class="img-fluid rounded-4 shadow-sm" src="data:image/png;base64,{{ graphic_genre }}">
+</div>
 
 {% endblock content %}
