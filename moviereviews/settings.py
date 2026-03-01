@@ -60,6 +60,10 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_DIRS = [
+    BASE_DIR / "moviereviews" / "static",
+]
+
 WSGI_APPLICATION = 'moviereviews.wsgi.application'
 
 
