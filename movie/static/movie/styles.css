@@ -117,14 +117,71 @@ body {
   margin-bottom: 10px;
 }
 
-.footer {
-  margin-top: 60px;
-  padding: 20px 0;
-  text-align: center;
-  color: #999;
-  font-size: 14px;
+/* ===== Navbar con estilo "home" ===== */
+.app-navbar{
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  margin: 18px auto;
+  max-width: 1200px;
+  padding: 10px 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+  font-family: 'Poppins', sans-serif;
 }
 
-.footer p {
+.app-brand{
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.app-navlinks .nav-link{
+  font-weight: 500;
+  opacity: 0.9;
+  margin-left: 8px;
+  border-radius: 12px;
+  padding: 8px 12px;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.app-navlinks .nav-link:hover{
+  background: rgba(255, 105, 180, 0.10);
+  transform: translateY(-1px);
+}
+
+.app-navlinks .nav-pill{
+  background: rgba(255, 105, 180, 0.14);
+}
+
+.app-navlinks .nav-pill:hover{
+  background: rgba(255, 105, 180, 0.20);
+}
+
+.app-toggler{
+  border: none;
+  box-shadow: none;
+}
+.app-toggler:focus{
+  box-shadow: none;
+}
+
+/* ===== Footer con estilo "home" ===== */
+.app-footer{
+  max-width: 1200px;
+  margin: 22px auto 28px auto;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #444;
+}
+
+.app-footer p{
   margin: 0;
+  font-weight: 500;
+  opacity: 0.9;
 }
